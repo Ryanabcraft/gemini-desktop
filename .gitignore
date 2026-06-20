@@ -3,6 +3,7 @@ __pycache__/
 build/
 dist_py/
 dist/
+dist_installer/
 node_modules/
 *.log
 main.js

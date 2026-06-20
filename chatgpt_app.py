@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Gemini Desktop — abre o Google Gemini no navegador em modo app."""
+"""ChatGPT Desktop — abre o ChatGPT no navegador em modo app."""
 from browser_launcher import detect_browser, launch_url
 import sys
-import os
 
-URL = "https://gemini.google.com"
+URL = "https://chatgpt.com"
 
 def main():
     browser = detect_browser()
@@ -15,7 +14,7 @@ def main():
         )
         if sys.platform == "win32":
             import ctypes
-            ctypes.windll.user32.MessageBoxW(0, msg, "Gemini Desktop", 0)
+            ctypes.windll.user32.MessageBoxW(0, msg, "ChatGPT Desktop", 0)
         else:
             print(msg)
         sys.exit(1)
