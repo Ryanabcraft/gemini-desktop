@@ -1,0 +1,10 @@
+__pycache__/
+*.spec
+build/
+dist_py/
+dist/
+node_modules/
+*.log
+main.js
+package.json
+package-lock.json
