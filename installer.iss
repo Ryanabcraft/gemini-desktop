@@ -1,8 +1,9 @@
 [Setup]
 AppName=Google Gemini
 AppVersion=1.0.0
-AppPublisher=Google LLC
-AppPublisherURL=https://gemini.google.com
+AppPublisher=Ryanabcraft
+AppPublisherURL=https://github.com/Ryanabcraft/gemini-desktop
+AppSupportURL=https://github.com/Ryanabcraft/gemini-desktop/issues
 DefaultDirName={autopf}\Google Gemini
 DefaultGroupName=Google Gemini
 UninstallDisplayIcon={app}\Google Gemini.exe

@@ -1,71 +1,55 @@
-# Google Gemini Desktop
+# Gemini Desktop
 
-Um aplicativo desktop elegante para acessar o **Google Gemini** diretamente do seu computador, sem precisar abrir o navegador toda vez.
+App desktop leve que abre o [Google Gemini](https://gemini.google.com) em uma janela limpa, sem abas de navegador.
 
-## ✨ Funcionalidades
+- ✅ **Login automático** — usa seus cookies do navegador, sem precisar logar de novo
+- ✅ **Multiplataforma** — Windows, Linux e macOS
+- ✅ **20+ navegadores** — Chrome, Edge, Brave, Firefox, Opera, Vivaldi e mais
+- ✅ **Código aberto** — Python puro, ~10 MB
+- ✅ **Sem telemetria** — não coleta nenhum dado
 
-- 🚀 **Acesso rápido** ao Google Gemini com um clique
-- 🌐 **Usa seu navegador real** — login funciona normalmente com sua conta Google
-- 🧩 **Compatível com 20+ navegadores** (Chrome, Edge, Brave, Opera, Vivaldi, e mais)
-- 🪟 **Janela limpa** — sem barra de endereço, abas ou distrações
-- 📦 **Instalador completo** — atalho na área de trabalho, menu iniciar, desinstalador
+## Download
 
-## 📸 Preview
+| Plataforma | Download |
+|------------|----------|
+| **Windows** | [`Google-Gemini-Setup.exe`](https://github.com/Ryanabcraft/gemini-desktop/releases/latest) — Instalador Inno Setup |
+| **Linux / macOS** | [`gemini_app.py`](gemini_app.py) — Rode com `python3 gemini_app.py` |
 
-![Google Gemini Desktop](icon.png)
+## Como usar
 
-## 🚀 Como usar
+### Windows
+1. Baixe o instalador `.exe` da [última release](https://github.com/Ryanabcraft/gemini-desktop/releases/latest)
+2. Execute e siga os passos
+3. Pronto! O Gemini abre em janela limpa
 
-### Instalação rápida
-1. Baixe o instalador na [página de Releases](https://github.com/Ryanabcraft/gemini-desktop/releases)
-2. Execute `Google-Gemini-Setup.exe`
-3. Pronto! O app aparece na sua área de trabalho
-
-### Ou execute direto (sem instalar)
+### Linux / macOS
 ```bash
-python gemini_app.py
+# Baixe o script
+wget https://raw.githubusercontent.com/Ryanabcraft/gemini-desktop/main/gemini_app.py
+
+# Execute
+python3 gemini_app.py
 ```
 
-## 🔧 Navegadores suportados
+Requer Python 3.6+ e um navegador instalado.
 
-| Navegador | Suporte |
-|-----------|---------|
-| Google Chrome | ✅ |
-| Chrome Canary | ✅ |
-| Chrome Beta/Dev | ✅ |
-| Microsoft Edge | ✅ |
-| Edge Beta/Dev | ✅ |
-| Brave | ✅ |
-| Brave Beta/Nightly | ✅ |
-| Opera | ✅ |
-| Opera GX | ✅ |
-| Vivaldi | ✅ |
-| Chromium | ✅ |
-| Yandex Browser | ✅ |
-| Epic Privacy Browser | ✅ |
-| Comodo Dragon | ✅ |
-| Slimjet | ✅ |
-| Cốc Cốc | ✅ |
+## ChatGPT Desktop também!
 
-## 🛠️ Como funciona
+Também temos o [ChatGPT Desktop](https://ryanabcraft.github.io/chatgpt-desktop/) —
+mesma ideia, pro ChatGPT. Repositório: [Ryanabcraft/chatgpt-desktop](https://github.com/Ryanabcraft/chatgpt-desktop)
 
-O app localiza o navegador Chromium instalado no seu sistema e abre o Gemini em modo `--app`, que cria uma janela dedicada sem abas nem barras de endereço — igual um aplicativo nativo.
+## Como funciona
 
-Como usa o **seu navegador real**, você já fica logado automaticamente com sua conta Google.
+O app detecta automaticamente seu navegador principal (Chrome, Edge, Brave, Firefox, Opera, etc.)
+e abre o Gemini no modo `--app` (Chromium) ou `--new-window` (Firefox).
 
-## 📦 Build do zero
+Você só precisa estar logado no Google Gemini no seu navegador — o app usa os mesmos cookies.
 
-```bash
-# Instalar PyInstaller
-pip install pyinstaller
+## Navegadores compatíveis
 
-# Compilar o executável
-pyinstaller --onefile --windowed --icon=icon.png --name "Google Gemini" gemini_app.py
+- **Chromium**: Chrome, Edge, Brave, Opera, Vivaldi, Chromium, Yandex, Epic, Comodo Dragon, Slimjet, Cốc Cốc
+- **Firefox**: Firefox, Firefox ESR
 
-# Gerar instalador (precisa do Inno Setup)
-iscc installer.iss
-```
+## Licença
 
-## 📄 Licença
-
-Este projeto não é afiliado ao Google. O logotipo do Gemini é propriedade do Google LLC.
+MIT

@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Gemini Desktop e ChatGPT Desktop — apps para acessar o Gemini e ChatGPT em janela limpa. Windows, Linux e macOS." />
-  <meta property="og:title" content="AI Desktops" />
-  <meta property="og:description" content="Gemini e ChatGPT em janela limpa. Windows, Linux e macOS." />
+  <meta name="description" content="Gemini Desktop — app desktop pro Google Gemini em janela limpa. Login automático com seu navegador. Windows, Linux e macOS." />
+  <meta property="og:title" content="Gemini Desktop" />
+  <meta property="og:description" content="Google Gemini em janela limpa. Login automático. Open source." />
   <meta property="og:type" content="website" />
-  <title>AI Desktops — Gemini e ChatGPT no seu computador</title>
+  <title>Gemini Desktop — Google Gemini no seu computador</title>
   <link rel="icon" type="image/svg+xml" href="https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg" />
   <style>
     :root {
@@ -83,7 +83,7 @@
     .button:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--ink); }
     .button.primary { color: white; background: var(--blue); }
     .button.ghost { background: var(--panel); }
-    .button.dark { background: var(--dark); }
+    .button.outline { background: transparent; }
     .window-card {
       position: relative; overflow: hidden; padding: 18px;
       border: 1px solid rgba(17, 19, 21, 0.18); border-radius: 8px;
@@ -143,25 +143,19 @@
       gap: clamp(26px, 5vw, 70px); align-items: center;
     }
     .section p { max-width: 680px; color: #4d535b; font-size: 18px; line-height: 1.6; }
-    .app-grid {
+    .dl-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
+      margin-top: 32px;
     }
-    .app-card {
+    .dl-card {
       border: 1px solid var(--ink); border-radius: 8px;
       background: var(--panel); box-shadow: 5px 5px 0 var(--ink);
       padding: 32px; text-align: center;
     }
-    .app-card img { width: 56px; height: 56px; margin-bottom: 16px; }
-    .app-card h3 { font-family: Georgia, serif; font-size: 24px; }
-    .app-card p { color: var(--muted); margin: 8px 0 24px; }
-    .os-badge {
-      display: inline-block; padding: 3px 8px; margin: 2px;
-      border: 1px solid var(--line); border-radius: 4px;
-      font-size: 11px; font-weight: 700; color: var(--muted);
-      background: var(--paper);
-    }
+    .dl-card h3 { font-family: Georgia, serif; font-size: 24px; }
+    .dl-card p { color: var(--muted); margin: 8px 0 24px; font-size: 15px; }
     .dl-btn {
       display: inline-flex; align-items: center; gap: 6px;
       min-height: 40px; padding: 0 18px;
@@ -173,6 +167,12 @@
     }
     .dl-btn:hover { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--ink); }
     .dl-btn.ghost-btn { background: var(--panel); color: var(--ink); }
+    .chatgpt-note {
+      margin-top: 32px; padding: 20px;
+      border: 2px dashed var(--line); border-radius: 8px;
+      background: var(--panel); text-align: center;
+    }
+    .chatgpt-note p { margin: 0; color: var(--muted); }
     footer {
       display: flex; justify-content: space-between; gap: 16px;
       padding: 28px clamp(18px, 5vw, 72px);
@@ -197,10 +197,10 @@
   <header class="site-header">
     <a class="brand" href="#top">
       <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg" alt="" />
-      <span>AI Desktops</span>
+      <span>Gemini Desktop</span>
     </a>
     <nav>
-      <a href="#apps">Apps</a>
+      <a href="#download">Download</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="https://github.com/Ryanabcraft/gemini-desktop" target="_blank">GitHub</a>
     </nav>
@@ -211,14 +211,14 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Open source &middot; Multiplataforma &middot; Grátis</p>
-        <h1>Gemini &amp; ChatGPT,<br>na sua máquina.</h1>
+        <h1>Google Gemini,<br>no seu PC.</h1>
         <p class="lead">
-          Apps desktop leves que abrem o Gemini e o ChatGPT em janela limpa,
+          App desktop leve que abre o Google Gemini em janela limpa,
           sem abas, sem distrações. Login automático com seu navegador.
           Funciona no Windows, Linux e macOS.
         </p>
         <div class="actions">
-          <a class="button primary" href="#apps">Ver apps</a>
+          <a class="button primary" href="#download">Baixar</a>
           <a class="button ghost" href="https://github.com/Ryanabcraft/gemini-desktop" target="_blank">GitHub</a>
         </div>
       </div>
@@ -230,14 +230,14 @@
             <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg" alt="" />
           </div>
           <div>
-            <strong>AI Desktops</strong>
-            <small>Gemini + ChatGPT no seu PC</small>
+            <strong>Gemini Desktop</strong>
+            <small>Google Gemini no seu PC</small>
           </div>
         </div>
         <div class="prompt-line">Pergunte qualquer coisa ao Gemini...</div>
-        <div class="prompt-line">Converse com o ChatGPT.</div>
+        <div class="prompt-line">Peça ajuda para programar, escrever ou criar.</div>
         <div class="info-box">
-          <span>Tamanho</span><strong>~10 MB cada</strong>
+          <span>Tamanho</span><strong>~10 MB</strong>
           <span>Plataformas</span><strong>Windows · Linux · macOS</strong>
           <span>Login</span><strong>Automático</strong>
         </div>
@@ -260,54 +260,37 @@
       </div>
     </section>
 
-    <!-- APPS -->
-    <section id="apps" class="section">
-      <p class="eyebrow">Apps</p>
-      <h2>Escolha seu AI Desktop.</h2>
-      <p style="margin-bottom:32px">Cada app pesa ~10 MB. Instala em segundos.</p>
+    <!-- DOWNLOAD -->
+    <section id="download" class="section">
+      <p class="eyebrow">Download</p>
+      <h2>Baixe o Gemini Desktop.</h2>
+      <p>Instala em segundos. ~10 MB. Código aberto.</p>
 
-      <div class="app-grid">
-        <!-- GEMINI -->
-        <div class="app-card">
-          <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg" alt="" />
-          <h3>Gemini Desktop</h3>
-          <p>Google Gemini em janela limpa.</p>
-          <div style="margin-bottom:20px">
-            <span class="os-badge">Windows</span>
-            <span class="os-badge">Linux</span>
-            <span class="os-badge">macOS</span>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <a class="dl-btn" href="https://github.com/Ryanabcraft/gemini-desktop/releases/download/v1.1.0/Google-Gemini-Setup.exe">
-              <svg style="width:14px;height:14px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              Baixar .exe (Windows)
-            </a>
-            <a class="dl-btn ghost-btn" href="https://raw.githubusercontent.com/Ryanabcraft/gemini-desktop/main/gemini_app.py">
-              gemini_app.py (Linux / macOS)
-            </a>
-          </div>
+      <div class="dl-grid">
+        <div class="dl-card">
+          <h3>Windows</h3>
+          <p>Instalador .exe com atalho na área de trabalho</p>
+          <a class="dl-btn" href="https://github.com/Ryanabcraft/gemini-desktop/releases/download/v1.1.0/Google-Gemini-Setup.exe">
+            <svg style="width:14px;height:14px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Baixar .exe
+          </a>
         </div>
+        <div class="dl-card">
+          <h3>Linux / macOS</h3>
+          <p>Script Python — baixe e rode direto</p>
+          <a class="dl-btn ghost-btn" href="https://raw.githubusercontent.com/Ryanabcraft/gemini-desktop/main/gemini_app.py">
+            gemini_app.py
+          </a>
+          <p style="margin-top:12px;font-size:13px">Requer Python 3.6+. Rode com <code>python3 gemini_app.py</code></p>
+        </div>
+      </div>
 
-        <!-- CHATGPT -->
-        <div class="app-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="" style="border-radius:12px;background:#000;padding:8px" />
-          <h3>ChatGPT Desktop</h3>
-          <p>ChatGPT em janela limpa.</p>
-          <div style="margin-bottom:20px">
-            <span class="os-badge">Windows</span>
-            <span class="os-badge">Linux</span>
-            <span class="os-badge">macOS</span>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <a class="dl-btn" href="https://github.com/Ryanabcraft/gemini-desktop/releases/download/v1.1.0/ChatGPT-Setup.exe">
-              <svg style="width:14px;height:14px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              Baixar .exe (Windows)
-            </a>
-            <a class="dl-btn ghost-btn" href="https://raw.githubusercontent.com/Ryanabcraft/gemini-desktop/main/chatgpt_app.py">
-              chatgpt_app.py (Linux / macOS)
-            </a>
-          </div>
-        </div>
+      <div class="chatgpt-note">
+        <p>
+          💡 Também temos o <strong>ChatGPT Desktop</strong>!
+          <a href="https://ryanabcraft.github.io/chatgpt-desktop/" style="color:var(--blue);font-weight:700;text-decoration:none">
+            Acessar →</a>
+        </p>
       </div>
     </section>
 
@@ -319,7 +302,7 @@
       </div>
       <div>
         <p><strong>Windows</strong> — Instalador .exe com atalho na área de trabalho, menu iniciar e desinstalador.</p>
-        <p><strong>Linux</strong> — Baixe o <code>gemini_app.py</code> ou <code>chatgpt_app.py</code>, dê permissão de execução e rode. Detecta Chrome, Chromium, Brave, Firefox, Opera, Edge e mais.</p>
+        <p><strong>Linux</strong> — Baixe o <code>gemini_app.py</code>, dê permissão de execução e rode. Detecta Chrome, Chromium, Brave, Firefox, Opera, Edge e mais.</p>
         <p><strong>macOS</strong> — Mesmo script Python. Detecta Chrome, Safari, Firefox, Edge, Brave, Opera e Vivaldi no /Applications.</p>
         <p style="margin-top:20px">
           <a class="button primary" href="https://github.com/Ryanabcraft/gemini-desktop" target="_blank">Ver no GitHub</a>
@@ -360,8 +343,8 @@
   </main>
 
   <footer>
-    <span>AI Desktops</span>
-    <span style="font-size:13px;color:rgba(255,255,255,0.5)">Não afiliado ao Google ou OpenAI.</span>
+    <span>Gemini Desktop</span>
+    <span style="font-size:13px;color:rgba(255,255,255,0.5)">Não afiliado ao Google.</span>
     <a href="https://github.com/Ryanabcraft/gemini-desktop" target="_blank">GitHub</a>
   </footer>
 </body>
