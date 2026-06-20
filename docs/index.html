@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Gemini Desktop</title>
+  <meta name="description" content="Acesse o Google Gemini diretamente do seu computador com janela limpa, login automático e suporte a 20+ navegadores.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    * { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa, #34d399, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gemini-gradient {
+      background: linear-gradient(135deg, #4285f4, #34a853, #fbbc05, #ea4335);
+    }
+    .card-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-[#0a0a1a] text-white antialiased">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0a0a1a]/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full gemini-gradient flex items-center justify-center text-sm font-bold text-white">G</div>
+        <span class="font-semibold text-sm text-white/90">Gemini Desktop</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/Ryanabcraft/gemini-desktop" target="_blank" class="text-sm text-white/40 hover:text-white/80 transition-colors">GitHub</a>
+        <a href="https://github.com/Ryanabcraft/gemini-desktop/releases/download/v1.0.0/Google-Gemini-Setup.exe" class="text-sm bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-lg font-medium transition-all shadow-lg shadow-blue-600/20">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center px-4 pt-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex justify-center mb-8">
+        <div class="w-24 h-24 rounded-2xl gemini-gradient p-[3px] shadow-2xl shadow-blue-600/20">
+          <div class="w-full h-full rounded-[14px] bg-[#0a0a1a] flex items-center justify-center">
+            <img src="https://raw.githubusercontent.com/Ryanabcraft/gemini-desktop/main/icon.png" alt="Gemini" class="w-20 h-20 rounded-xl" onerror="this.style.display='none'" />
+            <div class="w-20 h-20 rounded-xl gemini-gradient flex items-center justify-center text-3xl font-bold" id="fallback-icon">G</div>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+        <span class="text-white/90">Google Gemini</span><br>
+        <span class="gradient-text">Desktop</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-white/40 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Acesse o Google Gemini em uma janela limpa e dedicada, sem abas ou distrações.<br>
+        Login automático com seu navegador real. Rápido, leve e open source.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://github.com/Ryanabcraft/gemini-desktop/releases/download/v1.0.0/Google-Gemini-Setup.exe" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Baixar para Windows
+        </a>
+        <a href="https://github.com/Ryanabcraft/gemini-desktop" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all border border-white/10">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          Código Aberto
+        </a>
+      </div>
+
+      <div class="mt-10 flex items-center justify-center gap-6 text-sm text-white/30">
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>10 MB</span>
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Windows</span>
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Open Source</span>
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Grátis</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="max-w-6xl mx-auto px-4 py-24">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que usar o <span class="gradient-text">Gemini Desktop</span>?</h2>
+      <p class="text-white/40 text-lg max-w-2xl mx-auto">Uma experiência limpa e profissional para acessar o Google Gemini no seu computador.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white/[0.03] border border-white/5 rounded-xl p-6 card-hover transition-all duration-300">
+        <svg class="w-8 h-8 text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <h3 class="text-lg font-semibold mb-2">Janela Limpa</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Sem abas, sem barras de endereço, sem distrações. Apenas o Gemini em uma janela dedicada.</p>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/5 rounded-xl p-6 card-hover transition-all duration-300">
+        <svg class="w-8 h-8 text-green-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+        <h3 class="text-lg font-semibold mb-2">Login Automático</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Usa seu navegador real. Se você já está logado no Google, o login é automático.</p>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/5 rounded-xl p-6 card-hover transition-all duration-300">
+        <svg class="w-8 h-8 text-yellow-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11m0 0a2.25 2.25 0 002.25 2.25M3.75 14A2.25 2.25 0 016 16.25M3.75 14v6.75M6 16.25a2.25 2.25 0 002.25 2.25H9M6 16.25V6.75m0 0A2.25 2.25 0 018.25 4.5H9M6 6.75V3m0 0h3M9 4.5V3m0 0h6.75M9 4.5h6.75M9 21h6.75M9 21V16.5m0 0h6.75M9 16.5V6.75m6.75 0A2.25 2.25 0 0118 4.5h.75M15.75 6.75V21m0 0A2.25 2.25 0 0118 18.75h.75m-3 2.25H21m0 0V3m0 0h-.75M21 3h.75"/></svg>
+        <h3 class="text-lg font-semibold mb-2">20+ Navegadores</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Compatível com Chrome, Edge, Brave, Opera, Vivaldi e muitos outros navegadores Chromium.</p>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/5 rounded-xl p-6 card-hover transition-all duration-300">
+        <svg class="w-8 h-8 text-purple-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+        <h3 class="text-lg font-semibold mb-2">Open Source</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Código 100% aberto no GitHub. Leve, simples e auditável por qualquer um.</p>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/5 rounded-xl p-6 card-hover transition-all duration-300">
+        <svg class="w-8 h-8 text-pink-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.036 1.007-1.875 2.25-1.875s2.25.84 2.25 1.875c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 1.003.349.283.215.604.401.959.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.64.64 0 01-.657-.643l.001-.001z"/></svg>
+        <h3 class="text-lg font-semibold mb-2">Instalação Completa</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Instalador profissional com atalho na área de trabalho, menu iniciar e desinstalador.</p>
+      </div>
+
+      <div class="bg-white/[0.03] border border-white/5 rounded-xl p-6 card-hover transition-all duration-300">
+        <svg class="w-8 h-8 text-orange-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+        <h3 class="text-lg font-semibold mb-2">Apenas 10 MB</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Leve e rápido. O instalador tem apenas 12 MB e o app roda instantaneamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="max-w-6xl mx-auto px-4 py-24">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Como <span class="gradient-text">funciona</span></h2>
+      <p class="text-white/40 text-lg max-w-2xl mx-auto">Simples, direto e sem complicação.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-20 h-20 rounded-full bg-white/[0.03] border border-white/5 flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl font-bold gradient-text">01</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Baixe e Instale</h3>
+        <p class="text-white/40 text-sm leading-relaxed max-w-xs mx-auto">Baixe o instalador e execute. Em segundos o app está pronto.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-20 h-20 rounded-full bg-white/[0.03] border border-white/5 flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl font-bold gradient-text">02</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Abra o App</h3>
+        <p class="text-white/40 text-sm leading-relaxed max-w-xs mx-auto">O app detecta seu navegador e abre o Gemini em janela limpa.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-20 h-20 rounded-full bg-white/[0.03] border border-white/5 flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl font-bold gradient-text">03</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Use o Gemini</h3>
+        <p class="text-white/40 text-sm leading-relaxed max-w-xs mx-auto">Pronto! Você já está logado e pode usar o Gemini sem distrações.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Browsers -->
+  <section class="max-w-6xl mx-auto px-4 py-24">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Navegadores <span class="gradient-text">compatíveis</span></h2>
+      <p class="text-white/40 text-lg max-w-2xl mx-auto">Funciona com qualquer navegador baseado em Chromium.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Google Chrome</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Chrome Canary</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Chrome Beta</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Chrome Dev</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Microsoft Edge</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Edge Beta</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Edge Dev</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Brave</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Brave Beta</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Brave Nightly</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Opera</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Opera GX</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Vivaldi</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Chromium</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Yandex Browser</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Epic Privacy</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Comodo Dragon</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Slimjet</div>
+      <div class="bg-white/[0.03] border border-white/5 rounded-lg px-4 py-3 text-center text-sm text-white/50 hover:bg-white/[0.06] hover:text-white/80 transition-all">Cốc Cốc</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-6xl mx-auto px-4 pb-24">
+    <div class="bg-gradient-to-r from-blue-500/5 via-green-500/5 to-yellow-500/5 border border-white/5 rounded-2xl p-12 md:p-20 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">Pronto para <span class="gradient-text">testar</span>?</h2>
+      <p class="text-white/40 text-lg mb-8 max-w-xl mx-auto">Baixe agora e comece a usar o Google Gemini em uma janela limpa e sem distrações.</p>
+      <a href="https://github.com/Ryanabcraft/gemini-desktop/releases/download/v1.0.0/Google-Gemini-Setup.exe" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        Baixar Agora
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/30">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded-full gemini-gradient flex items-center justify-center text-[9px] font-bold text-white">G</div>
+        <span>Gemini Desktop</span>
+      </div>
+      <p>Não afiliado ao Google. Google Gemini é marca registrada do Google LLC.</p>
+      <a href="https://github.com/Ryanabcraft/gemini-desktop" target="_blank" class="hover:text-white/60 transition-colors">GitHub</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById('fallback-icon')?.style.display && (document.getElementById('fallback-icon').style.display = 'none');</script>
+</body>
+</html>
