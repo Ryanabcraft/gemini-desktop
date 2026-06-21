@@ -1,10 +1,10 @@
 [Setup]
 AppName=Google Gemini
-AppVersion=1.0.0
+AppVersion=1.1.0
 AppPublisher=Ryanabcraft
 AppPublisherURL=https://github.com/Ryanabcraft/gemini-desktop
 AppSupportURL=https://github.com/Ryanabcraft/gemini-desktop/issues
-DefaultDirName={autopf}\Google Gemini
+DefaultDirName={localappdata}\Google Gemini
 DefaultGroupName=Google Gemini
 UninstallDisplayIcon={app}\Google Gemini.exe
 UninstallDisplayName=Google Gemini
@@ -12,7 +12,7 @@ OutputDir=dist_installer
 OutputBaseFilename=Google-Gemini-Setup
 Compression=lzma2
 SolidCompression=yes
-PrivilegesRequired=admin
+PrivilegesRequired=lowest
 
 [Languages]
 Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
